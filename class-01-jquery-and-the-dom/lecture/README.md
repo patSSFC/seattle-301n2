@@ -20,7 +20,6 @@
 6. Shruti & Austin & Laura
 
 # Class videos
-- [Part 1/4]()
-- [Part 2/4]()
-- [Part 3/4]()
-- [Part 4/4]()
+- [Part 1/3](https://youtu.be/1PeJkC_FpKI)
+- [Part 2/3](https://youtu.be/12TZAMY7Ouw)
+- [Part 3/3](https://youtu.be/xqV3JBqR-8o)
