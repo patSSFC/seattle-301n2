@@ -12,7 +12,5 @@
 5. Lab - Portfolio Projects
 
 # Class videos
-- [Part 1/4]()
-- [Part 2/4]()
-- [Part 3/4]()
-- [Part 4/4]()
+- [Part 1/2](https://youtu.be/gIdqA2tA7eM)
+- [Part 2/2](https://www.youtube.com/watch?v=nvImL-ucM6w)
