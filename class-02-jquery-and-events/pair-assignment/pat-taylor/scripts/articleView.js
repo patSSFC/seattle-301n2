@@ -66,7 +66,7 @@ articleView.setTeasers = function() {
   $('.article-body *:nth-of-type(n+2)').hide(); // Hide elements beyond the first 2 in any artcile body.
 
   $('#articles').on('click', function(ev){
-    $evTarget = $(ev.target);
+    var $evTarget = $(ev.target);
     ev.preventDefault();
     if($evTarget.hasClass('read-on')){
       $evTarget.prev().children().show();
