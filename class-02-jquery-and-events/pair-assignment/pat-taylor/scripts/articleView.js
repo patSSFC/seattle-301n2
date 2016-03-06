@@ -44,7 +44,6 @@ articleView.handleCategoryFilter = function() {
     if($(this).val()) {
       var $articles = $('article');
       $articles.hide();
-      console.log($(this).val());
       $articles.filter('article[data-category="' + $(this).val() + '"]' ).fadeIn(400);
     } else {
       $('article').filter(':not(.template)').fadeIn(400);
