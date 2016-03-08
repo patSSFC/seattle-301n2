@@ -11,7 +11,6 @@
 .icon-menu {
   font-size: 3.25em;
   float: right;
-
 }
 
 .main-nav {
@@ -58,4 +57,15 @@
          - Hide the hamburger.
          - Main should be all on one row, with padding spaced better for a larger screen.
          - Just, ya know, try to make it look good! */
-/* @media only screen... */
+@media only screen and (min-width: 720px) {
+  .icon-menu {
+    display: none;
+  }
+  .main-nav ul {
+    display: block;
+  }
+
+  .main-nav li {
+    display: inline;
+  }
+}
