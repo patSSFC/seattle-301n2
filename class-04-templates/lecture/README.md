@@ -26,7 +26,9 @@ The pair programming, the lectures, the lab time, the personal interactions with
 I like working with a partner on assignments. It's always helpful to have someone to bounce ideas off of.
 
 Lots of lab time!
+
 --------
+
 ### WHICH ASPECTS OF THE TRAINING DID YOU FIND THE LEAST HELPFUL DURING THIS WEEK?
 Nada!
 
@@ -43,7 +45,9 @@ I am struggling with the github workflow for pair programming. I really could ha
 I found all of it pretty helpful.
 
 All was helpful.
+
 ------
+
 ### DO YOU HAVE ANY QUESTIONS, SUGGESTIONS, OR CONCERNS?
 If possible, split up the pair-programming to be every other lab.
 
