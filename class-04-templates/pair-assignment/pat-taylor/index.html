@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+
 
     <!--
       TODO: Add a script tag to hold the Handlebars template.
@@ -20,8 +22,7 @@
     -->
 
     <script id="article-template" type="text/x-handlebars-template">
-
-      <article class="template template" data-category="{{category}}">
+      <article class="" data-category="{{category}}">
           <header>
             <h1>{{title}}</h1>
             <div class="byline">
@@ -29,7 +30,7 @@
               published <time pubdate datetime="2000-01-01">{{publishTime}}</time>
             </div>
           </header>
-          <section class="article-body">{{body}}</section>
+          <section class="article-body">{{{body}}}</section>
           <a href="#" class="read-on">Read on &rarr;</a>
       </article>
     </script>
@@ -88,9 +89,7 @@
       &copy; 2015 Code Fellows | Static Blog | Happy Ipsum!
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.amd.js"></script>
-    <script type="text/javasript" src="scripts/blogArticles.js"></script>
+    <script type="text/javascript" src="scripts/blogArticles.js"></script>
     <script src="scripts/article.js"></script>
     <script src="scripts/articleView.js"></script>
   </body>
