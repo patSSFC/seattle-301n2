@@ -67,22 +67,27 @@ articleView.setTeasers = function () {
 articleView.procesFilterTemplate = function () {
   var $source = $('#filter-template').html();
   var template = Handlebars.compile($source);
-  var filters = [
-    {
-      filterType: 'author-filter',
-      type: 'Author',
-    },
-    {
-      filterType: 'category-filter',
-      type: 'Category',
-    },
-  ];
+  console.log('processing filter template');
+  var f = {
+    filters: [
+      {
+        filterType: 'author-filter',
+        type: 'Author',
+      },
+      {
+        filterType: 'category-filter',
+        type: 'Category',
+      },
+    ],
+  };
 
-  var html = template(filters);
+  var html = template(f);
+  console.log(html);
   $('#filters').html(html);
 };
 
 $(document).ready(function () {
+  articleView.procesFilterTemplate();
   articleView.populateFilters();
   articleView.handleCategoryFilter();
   articleView.handleAuthorFilter();
