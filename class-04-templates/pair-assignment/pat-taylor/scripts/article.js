@@ -10,10 +10,9 @@ function Article(opts) {
 }
 
 Article.prototype.toHtml = function () {
-  
 
   $source = $('#article-template').html();
-  $template = Handlebars.compile($source);
+  template = Handlebars.compile($source);
 
   // DONE: If your template will use properties that aren't on the object yet, add them.
   //   Since your template can't hold any JS logic, we need to execute the logic here.
@@ -22,8 +21,7 @@ Article.prototype.toHtml = function () {
   this.daysAgo = parseInt((new Date() - new Date(this.publishedOn)) / 60 / 60 / 24 / 1000);
   this.publishStatus = this.publishedOn ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
 
-
-  var html = $template(this);
+  var html = template(this);
   return html;
 };
 
