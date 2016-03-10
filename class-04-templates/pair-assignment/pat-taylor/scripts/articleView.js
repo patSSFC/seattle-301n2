@@ -65,8 +65,8 @@ articleView.setTeasers = function () {
 };
 
 articleView.procesFilterTemplate = function () {
-  $source = $('#filter-template').html();
-  template = Handlebars.compile($source);
+  var $source = $('#filter-template').html();
+  var template = Handlebars.compile($source);
   var filters = [
     {
       filterType: 'author-filter',
@@ -80,7 +80,6 @@ articleView.procesFilterTemplate = function () {
 
   var html = template(filters);
   $('#filters').html(html);
-
 };
 
 $(document).ready(function () {

@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="styles/modules.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
-
     <script id="filter-template" type="text/x-handlebars-template">
         {{#each filters}}
         <li>
@@ -22,12 +21,12 @@
         {{/each}}
     </script>
     <script id="article-template" type="text/x-handlebars-template">
-      <article class="" data-category="{{category}}">
+      <article class="" data-category="{{category}}" data-author="{{author}}">
           <header>
             <h1>{{title}}</h1>
             <div class="byline">
               By <address><a href="{{authorUrl}}">{{author}}</a></address>
-               <time pubdate datetime="2000-01-01">{{publishStatus}}</time>
+               <time pubdate datetime="{{publishedOn}}">{{publishStatus}}</time>
             </div>
           </header>
           <section class="article-body">{{{body}}}</section>
