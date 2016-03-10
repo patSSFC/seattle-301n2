@@ -8,6 +8,11 @@
 
 5. Portfolio Labs
 
+# Class videos
+- [Part 1/3](https://www.youtube.com/watch?v=b1DbR7GKXow)
+- [Part 2/3](https://www.youtube.com/watch?v=fEXpTlfjMas)
+- [Part 3/3](https://www.youtube.com/watch?v=UntC8qc3KWA)
+
 
 # Survey Responses
 ### WHICH ASPECTS OF THE TRAINING DID YOU FIND THE MOST HELPFUL DURING THIS WEEK?
