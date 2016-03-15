@@ -14,7 +14,7 @@ var article = {
    "name": "Vento",
    "price": 800000
 }
-//XML
+//XML - Extensive Markup Language
 //<car>
 //   <company>Volkswagen</company>
 //   <name>Vento</name>
@@ -113,5 +113,3 @@ var raceHorse = {
 
 JSON.stringify(myObject);
 JSON.parse(dataPoints);
-
-$.ajax, $.load, $.get, $.getJSON, $.post
