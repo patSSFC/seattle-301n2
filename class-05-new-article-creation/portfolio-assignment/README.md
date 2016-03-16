@@ -2,6 +2,8 @@
 
 Work in pairs to improve your portfolio.
 
+No need to add each other as collaborators, just share a link to your portfolio repo with your partner.
+
 Start with code review. Spend the first 30 minutes looking over your partner's portfolio code. Look for opportunities to improve the code base according to the best practices and concepts that we've covered in class so far.
 
 Remember, good code review:
