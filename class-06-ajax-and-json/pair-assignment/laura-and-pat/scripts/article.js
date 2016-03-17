@@ -58,5 +58,22 @@ Article.fetchAll = function() {
     // then load all the data into Article.all with the .loadAll function above,
     // and then render the index page.
 
+    $.ajax({
+      type: 'GET',
+      url: '../data/hackerIpsum.json',
+      success: function(data, status, xhr) {
+        // data.forEach(function(article) {
+        //   $('#content').append('<p>' + article.title + '</p>');
+        // })
+        localStorage.rawData = data;
+      },
+      error: function(request, status, error) {
+        console.dir(request);
+        console.log('status: ' + status, 'error: ' + error);
+      }
+    }).done(function() {
+      console.log('Complete');
+    })
+
   }
 }
