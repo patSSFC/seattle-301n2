@@ -102,7 +102,7 @@ articleView.create = function() {
 
 articleView.initIndexPage = function() {
   Article.all.forEach(function(a){
-    $('#articles').append(a.toHtml())
+    $('#articles').append(a.toHtml());
   });
 
   articleView.populateFilters();
