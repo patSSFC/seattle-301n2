@@ -6,9 +6,9 @@ Apply some "FP" concepts to the MVC Blog!
 
 We'll make an "admin" page, which will show some stats on how authors on the blog are doing. In the end, it will looks [something like this](https://cf-mvc-blog--class07.aerobatic.io/admin.html).
 
-Today there are many TODO items, but they are (mostly) smaller bites.
+Today there are many items, but they are (mostly) smaller bites.
 
-## TODOs: MVP
+##  MVP
 1. Start by looking over what's new in the codebase. There is now an admin.html page! There are some `// DONE` comments! There are some new functions in articleView.js. Practice your code-reading skills.
 
 1. Let's make sure each one of our scripts are properly enclosed. Wrap the contents of article.js and articleView.js in an IIFE. Set up your IIFE so it receives a parameter to which it can attach behavior. For now, you might want to use `window` to export your objects or constructor functions.
