@@ -68,9 +68,17 @@
     })
   };
 
-  // TODO: Chain together a `map` and a `reduce` call to produce an array of unique author names.
+  // DONE:PAT+LAURA Chain together a `map` and a `reduce` call to produce an array of unique author names.
   Article.allAuthors = function() {
-    return // Don't forget to read the docs on map and reduce!
+    var newArray;
+    return Article.all.map(function(article) {
+      return article.author;
+    }).reduce(function(a, b) {
+      if (a.indexOf(b) == -1) {
+        a.push(b);
+      }
+      return a;
+    }, []);
   };
 
   Article.numWordsByAuthor = function() {
