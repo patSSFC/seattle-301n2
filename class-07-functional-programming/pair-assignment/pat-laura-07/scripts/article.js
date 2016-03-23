@@ -88,15 +88,13 @@
     return Article.allAuthors().map(function(author) {
       return {
         name: author,
-        numwords: Article.all.map(function(a) {
-          return a.author === author;
-
         // someKey: someValOrFunctionCall().map(...).reduce(...), ...
-          }).map(function(a){
-            console.log(a);
-            return a.body.split(" ").length;
-          }).reduce(function(a, b) {
-            return a + b;
+        numwords: Article.all.filter(function(a) {
+          return a.author === author;
+        }).map(function(a){
+          return a.body.split(" ").length;
+        }).reduce(function(a, b) {
+          return a + b;
         })
       }
     })  // add them up
