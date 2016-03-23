@@ -89,7 +89,7 @@
       return {
         name: author,
         // someKey: someValOrFunctionCall().map(...).reduce(...), ...
-        numwords: Article.all.filter(function(a) {
+        numWords: Article.all.filter(function(a) {
           return a.author === author;
         }).map(function(a){
           return a.body.split(" ").length;
