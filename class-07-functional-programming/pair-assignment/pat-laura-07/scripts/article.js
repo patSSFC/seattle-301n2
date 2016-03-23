@@ -66,7 +66,7 @@
     })
     .reduce(function(a, b) {
       return a + b;
-    })
+    });
   };
 
   // DONE:PAT+LAURA Chain together a `map` and a `reduce` call to produce an array of unique author names.
@@ -83,7 +83,7 @@
   };
 
   Article.numWordsByAuthor = function() {
-    // TODO: Transform each author string into an object with 2 properties: One for
+    // DONE: PAT+LAURA Transform each author string into an object with 2 properties: One for
     // the author's name, and one for the total number of words across all articles written by the specified author.
     return Article.allAuthors().map(function(author) {
       return {
@@ -92,12 +92,12 @@
         numWords: Article.all.filter(function(a) {
           return a.author === author;
         }).map(function(a){
-          return a.body.split(" ").length;
+          return a.body.split(' ').length;
         }).reduce(function(a, b) {
           return a + b;
         })
-      }
-    })  // add them up
+      };
+    });  // add them up
   };
-    module.Article  = Article;
+  module.Article = Article;
 })(window);
