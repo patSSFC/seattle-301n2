@@ -22,7 +22,7 @@
   // DONE:PAT-LAURA Set up a DB table for articles.
   Article.createTable = function(callback) {
     webDB.execute(
-      'CREATE TABLE IF NOT EXISTS articles (title VARCHAR(255) NOT NULL, category VARCHAR(20) NOT NULL, author VARCHAR(255) NOT NULL, authorUrl VARCHAR(255), publishedOn VARCHAR(255) NOT NULL, body TEXT NOT NULL);',
+      'CREATE TABLE IF NOT EXISTS articles (id INTEGER PRIMARY KEY, title VARCHAR(255) NOT NULL, category VARCHAR(20) NOT NULL, author VARCHAR(255) NOT NULL, authorUrl VARCHAR(255), publishedOn VARCHAR(255) NOT NULL, body TEXT NOT NULL);',
       function(result) {
         console.log('Successfully set up the articles table.', result);
         if (callback) callback();
@@ -53,11 +53,12 @@
   };
 
   // TODO: Delete an article instance from the database:
-  Article.prototype.deleteRecord = function(callback) {
+  Article.prototype.deleteRecord = function(id, callback) {
     webDB.execute(
       [
         {
-          /* ... */
+          'sql': 'DELETE FROM articles WHERE title = (?)',
+          'data': [this.title]
         }
       ],
       callback
@@ -92,7 +93,6 @@
         // Now instanitate those rows with the .loadAll function, and pass control to the view.
         console.log(rows);
         Article.loadAll(rows);
-
       } else {
         console.log('INSIDE ELSE');
         $.getJSON('/data/hackerIpsum.json', function(rawData) {
@@ -102,6 +102,7 @@
             var article = new Article(item); // Instantiate an article based on item from JSON
             // Cache the newly-instantiated article in DB:
             article.insertRecord();
+            //article.deleteRecord();
           });
           // Now get ALL the records out the DB, with their database IDs:
           webDB.execute('SELECT rowid, * FROM articles', function(rows) {
