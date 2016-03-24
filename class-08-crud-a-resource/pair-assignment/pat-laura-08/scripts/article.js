@@ -22,7 +22,7 @@
   // DONE:PAT-LAURA Set up a DB table for articles.
   Article.createTable = function(callback) {
     webDB.execute(
-      'CREATE TABLE IF NOT EXISTS articles (id INTEGER PRIMARY KEY, title VARCHAR(255) NOT NULL, category VARCHAR(20) NOT NULL, author VARCHAR(255) NOT NULL, authorUrl VARCHAR(255), publishedOn VARCHAR(255) NOT NULL, body TEXT NOT NULL);',
+      'CREATE TABLE IF NOT EXISTS articles (title VARCHAR(255) NOT NULL, category VARCHAR(20) NOT NULL, author VARCHAR(255) NOT NULL, authorUrl VARCHAR(255), publishedOn VARCHAR(255) NOT NULL, body TEXT NOT NULL);',
       function(result) {
         console.log('Successfully set up the articles table.', result);
         if (callback) callback();
@@ -45,7 +45,7 @@
       [
         {
           'sql': 'INSERT INTO articles (title, category, author, authorUrl, publishedOn, body) VALUES (?, ?, ?, ?, ?, ?);',
-          'data': [],
+          'data': [this.title, this.category, this.author, this.authorUrl, this.publishedOn, this.body],
         }
       ],
       callback
@@ -85,17 +85,19 @@
   // we need to retrieve the JSON and process it.
   // If the DB has data already, we'll load up the data (sorted!), and then hand off control to the View.
   Article.fetchAll = function(next) {
-    webDB.execute('', function(rows) {
+    webDB.execute('SELECT * FROM articles ORDER BY publishedOn ASC', function(rows) {
       if (rows.length) {
         // Now instanitate those rows with the .loadAll function, and pass control to the view.
 
       } else {
+        console.log('else');
         $.getJSON('/data/hackerIpsum.json', function(rawData) {
           // Cache the json, so we don't need to request it next time:
+          localStorage.rawData = rawData;
           rawData.forEach(function(item) {
             var article = new Article(item); // Instantiate an article based on item from JSON
             // Cache the newly-instantiated article in DB:
-
+            article.insertRecord();
           });
           // Now get ALL the records out the DB, with their database IDs:
           webDB.execute('', function(rows) {
