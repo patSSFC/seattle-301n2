@@ -39,7 +39,7 @@
   };
 
 
-  // TODO: Insert an article instance into the database:
+  // DONE:PAT-LAURA Insert an article instance into the database:
   Article.prototype.insertRecord = function(callback) {
     webDB.execute(
       [
@@ -81,16 +81,20 @@
     });
   };
 
-  // TODO: Refactor this to check if the database holds any records or not. If the DB is empty,
+  // DONE: PAT-LAURA Refactor this to check if the database holds any records or not. If the DB is empty,
   // we need to retrieve the JSON and process it.
   // If the DB has data already, we'll load up the data (sorted!), and then hand off control to the View.
   Article.fetchAll = function(next) {
     webDB.execute('SELECT * FROM articles ORDER BY publishedOn ASC', function(rows) {
+      console.log("INSIDE FUNCTION fetchall");
       if (rows.length) {
+        console.log("INSIDE IF STATEMENT FETCHALL");
         // Now instanitate those rows with the .loadAll function, and pass control to the view.
+        console.log(rows);
+        Article.loadAll(rows);
 
       } else {
-        console.log('else');
+        console.log('INSIDE ELSE');
         $.getJSON('/data/hackerIpsum.json', function(rawData) {
           // Cache the json, so we don't need to request it next time:
           localStorage.rawData = rawData;
@@ -100,12 +104,13 @@
             article.insertRecord();
           });
           // Now get ALL the records out the DB, with their database IDs:
-          webDB.execute('', function(rows) {
+          webDB.execute('SELECT rowid, * FROM articles', function(rows) {
             // Now instanitate those rows with the .loadAll function, and pass control to the view.
-
+            Article.loadAll(rows);
           });
         });
       }
+      next();
     });
   };
 
