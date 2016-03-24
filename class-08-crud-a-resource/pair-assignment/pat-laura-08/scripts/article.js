@@ -19,10 +19,10 @@
     return template(this);
   };
 
-  // TODO: Set up a DB table for articles.
+  // DONE:PAT-LAURA Set up a DB table for articles.
   Article.createTable = function(callback) {
     webDB.execute(
-      '...',
+      'CREATE TABLE IF NOT EXISTS articles (id INTEGER PRIMARY KEY, title VARCHAR(255) NOT NULL, category VARCHAR(20) NOT NULL, author VARCHAR(255) NOT NULL, authorUrl VARCHAR(255), publishedOn VARCHAR(255) NOT NULL, body TEXT NOT NULL);',
       function(result) {
         console.log('Successfully set up the articles table.', result);
         if (callback) callback();
@@ -44,7 +44,7 @@
     webDB.execute(
       [
         {
-          'sql': '...;',
+          'sql': 'INSERT INTO articles (title, category, author, authorUrl, publishedOn, body) VALUES (?, ?, ?, ?, ?, ?);',
           'data': [],
         }
       ],
