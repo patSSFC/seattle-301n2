@@ -22,7 +22,7 @@
   // DONE:PAT-LAURA Set up a DB table for articles.
   Article.createTable = function(callback) {
     webDB.execute(
-      'CREATE TABLE IF NOT EXISTS articles (id INTEGER PRIMARY KEY, title VARCHAR(255) NOT NULL, category VARCHAR(20) NOT NULL, author VARCHAR(255) NOT NULL, authorUrl VARCHAR(255), publishedOn VARCHAR(255) NOT NULL, body TEXT NOT NULL);',
+      'CREATE TABLE IF NOT EXISTS articles (id INTEGER PRIMARY KEY, title VARCHAR(255) NOT NULL, category VARCHAR(20) NOT NULL, author VARCHAR(255) NOT NULL, authorUrl VARCHAR(255), publishedOn VARCHAR(255) NOT NULL, body TEXT NOT NULL)',
       function(result) {
         console.log('Successfully set up the articles table.', result);
         if (callback) callback();
@@ -33,7 +33,7 @@
   // TODO: Correct the SQL to delete all records from the articles table.
   Article.truncateTable = function(callback) {
     webDB.execute(
-      'DELETE ...;',
+      'DELETE FROM articles;',
       callback
     );
   };
@@ -45,7 +45,7 @@
       [
         {
           'sql': 'INSERT INTO articles (title, category, author, authorUrl, publishedOn, body) VALUES (?, ?, ?, ?, ?, ?);',
-          'data': [this.title, this.category, this.author, this.authorUrl, this.publishedOn, this.body],
+          'data': [this.title, this.category, this.author, this.authorUrl, this.publishedOn, this.body]
         }
       ],
       callback
@@ -57,8 +57,8 @@
     webDB.execute(
       [
         {
-          'sql': 'DELETE FROM articles WHERE title = (?)',
-          'data': [this.title]
+          'sql': 'DELETE FROM articles WHERE id = (?)',
+          'data': [this.id]
         }
       ],
       callback
@@ -69,7 +69,10 @@
   Article.prototype.updateRecord = function(callback) {
     webDB.execute(
       [
-        /* ... */
+        {
+          'sql': 'UPDATE articles SET (title = ?, category = ?, author = ?, authorUrl = ?, publishedOn = ?, body = ?)',
+          'data': [this.title, this.category, this.author, this.authorUrl, this.publishedOn, this.body]
+        }
       ],
       callback
     );
@@ -87,11 +90,10 @@
   // If the DB has data already, we'll load up the data (sorted!), and then hand off control to the View.
   Article.fetchAll = function(next) {
     webDB.execute('SELECT * FROM articles ORDER BY publishedOn ASC', function(rows) {
-      console.log("INSIDE FUNCTION fetchall");
+      console.log('INSIDE FUNCTION fetchall');
       if (rows.length) {
-        console.log("INSIDE IF STATEMENT FETCHALL");
+        console.log('INSIDE IF STATEMENT FETCHALL');
         // Now instanitate those rows with the .loadAll function, and pass control to the view.
-        console.log(rows);
         Article.loadAll(rows);
       } else {
         console.log('INSIDE ELSE');
@@ -144,13 +146,13 @@
           return a.author === author;
         })
         .map(function(a) {
-          return a.body.match(/\b\w+/g).length
+          return a.body.match(/\b\w+/g).length;
         })
         .reduce(function(a, b) {
           return a + b;
         })
-      }
-    })
+      };
+    });
   };
 
   Article.stats = function() {
@@ -159,7 +161,7 @@
       numWords: Article.numwords(),
       Authors: Article.allAuthors(),
     };
-  }
+  };
 
   module.Article = Article;
 })(window);
