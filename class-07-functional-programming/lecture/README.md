@@ -11,6 +11,12 @@
   - forEach(), filter(), map(), reduce()
 
 
+# Class Videos
+- [Lecture Pt 1](https://youtu.be/BOdfKLcoeRo)
+- [Lecture Pt 2](https://youtu.be/y7J-bo4w6ss)
+- [Lecture Pt 3](https://youtu.be/zROn1CmQ0vM)
+
+
 
 # Survey Feedback - Week 2
 ## WHICH ASPECTS OF THE TRAINING DID YOU FIND THE MOST HELPFUL DURING THIS WEEK?
