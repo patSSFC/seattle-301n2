@@ -1,5 +1,5 @@
 # Daily Plan
-1. Code Review
+1. Project Week - Review Projects & Talk Process
 2. Review GitHub Repo process - Release Starter code, Pull upstream, etc.
 3. Schedule next week - Final Project Overview
 
