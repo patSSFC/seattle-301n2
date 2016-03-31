@@ -7,3 +7,8 @@ Databases power web applications everywhere by enabling them to persist, modify,
  - [WebSQL introduction and example](http://html5doctor.com/introducing-web-sql-databases/)
  - [html5sql library](http://html5sql.com/) -- This is what powers the `webDB` object. Peek under the hood!
  - [Query String Primer](https://en.wikipedia.org/wiki/Query_string)
+
+ # Class Videos
+ - [Lecture Pt 1](https://youtu.be/z_27uaoOycQ)
+ - [Lecture Pt 2](https://youtu.be/HbYHY6Eb4iQ)
+ - [Lecture Pt 3](https://youtu.be/bX7GleijnCw)
