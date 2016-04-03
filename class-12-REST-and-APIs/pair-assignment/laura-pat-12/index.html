@@ -23,14 +23,14 @@
         <a href="#" class="read-on">Read on &rarr;</a>
       </article>
     </script>
-    <!-- TODO: We have a new Handlebars template! Help fill in a few expressions
+    <!-- DONE: We have a new Handlebars template! Help fill in a few expressions
               from the repo data we will receive: -->
     <script id="repo-template" type="text/x-handlebars-template">
       <li>
         <a href="{{html_url}}" target="_blank"><h3>{{name}}</h3></a>
-        <p>Description: {{}}</p>
-        <p>Language: {{}}</p>
-        <p>Created: {{}}</p>
+        <p>Description: {{description}}</p>
+        <p>Language: {{language}}</p>
+        <p>Created: {{created_at}}</p>
         <p>Last updated: {{updated_at}}</p>
         // LOOK: A Handlebars `if` block!
         {{#if watchers_count}}
