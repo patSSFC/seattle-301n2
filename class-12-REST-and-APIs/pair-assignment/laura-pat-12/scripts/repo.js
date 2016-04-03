@@ -13,15 +13,18 @@
       },
       success: function(data, message, xhr) {
         repos.all = data;
+
       },
+    }).done(function() {
+      callback();
     });
-    callback();
   };
 
   // DONE: Model method that filters the full collection for repos with a particular attribute.
   // You could use this to filter all repos that have a non-zero `forks_count`, `stargazers_count`, or `watchers_count`.
   repos.with = function(attr) {
     return repos.all.filter(function(repo) {
+      console.log('repo attr' + repo[attr]);
       return repo[attr];
     });
   };

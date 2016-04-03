@@ -9,7 +9,7 @@
     $about.show().siblings().hide();
   };
 
-  // TODO: Remember that new Handlebars template? Let's compile it!
+  // DONE: Remember that new Handlebars template? Let's compile it!
   // Save the result in this `render` variable.
   var render = function(repo) {
     var template = Handlebars.compile($('#repo-template').text());
@@ -27,7 +27,7 @@
     // The jQuery `append` method lets us append an entire array of HTML elements at once,
     // So we can use a little FP to transform our data-set into DOM nodes:
     $('#about ul').append(
-      // REVIEW: we added the `name` property here as our initial filter property. Try
+      // DONE: we added the `name` property here as our initial filter property. Try
       // changing it to see what happens!
       repos.with('name').map(render)
       // repos.with('name').map(function(a) {
