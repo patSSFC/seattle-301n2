@@ -11,7 +11,14 @@
 
   // TODO: Remember that new Handlebars template? Let's compile it!
   // Save the result in this `render` variable.
-  var render;
+  var render = function(repo) {
+    var template = Handlebars.compile($('#repo-template').text());
+    console.log('hello' + template(repo));
+    return template(repo);
+  };
+
+  // var render = Handlebars.compile($('#repo-template').text());
+  // console.log(render);
 
   // DONE: If all the data is loaded, we can prep the UI and render the repos.
   repoView.index = function() {
@@ -23,6 +30,9 @@
       // REVIEW: we added the `name` property here as our initial filter property. Try
       // changing it to see what happens!
       repos.with('name').map(render)
+      // repos.with('name').map(function(a) {
+      //   console.log(a);
+      // });
     );
   };
 
