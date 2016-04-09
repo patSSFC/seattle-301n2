@@ -1,4 +1,9 @@
 # Class 16 -  Project Week: Milestone 1
+## Groups
+1. Anti-tourist Trap - Ron, Shruti, Sam
+2. Political Stats - Pat, Austin, Matt, Taylor
+3. Origin1 Coffee Svc - Andrew, Megan, Stephanie
+4. Vinyl Wishes - Laura, Maddie, Joe
 
 ## Final Project Rules and Process
 For your final project, your task is to work with a team to build a web site that simulates a real-world product, service, or game.
@@ -35,14 +40,13 @@ Here's the process that we'll be using for project week.
 
    Proposals, written or electronic, as per the project description, are due for review with the instruction team. First come, first served!
 
-  **Due at 12pm.**
+  **Due at Monday Evening Labs.**
 
-2.
 Here are some tips on how to organize your team during the launch phase.
 
  * Elect a Launch Driver who will be responsible for the following:
     * Driving the coding of the initial scaffolding phase.
-    * Hosting the code under their GitHub account (or create a new GitHub organization for your team and an organizational repo for the project) 
+    * Hosting the code under their GitHub account (or create a new GitHub organization for your team and an organizational repo for the project)
  * The rest of the team will be Launch Navigators and responsible for the following:
       * Navigating the coding of the initial scaffolding phase.
       * Staying one-step ahead of the Launch Driver by researching unfamiliar technology.
