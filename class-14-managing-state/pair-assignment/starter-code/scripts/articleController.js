@@ -20,12 +20,15 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
+  //loadByAuthor calls Article.findWhere and passes it the 'author' field, ctx.params.authorName which represents the author of the article (also replaces '+' with a ' '), and then sets the ctx.articles property to all the articles by that author.
+  //articlesloadByAuthor is kicked off when we use the author filter. the route is setup to call articlesloadByAuthor once it gets a URL that matches the '/author/:authorName' format  and then next() represents articlesController.index which calls articleView.index to render.
   articlesController.loadByAuthor = function(ctx, next) {
     var authorData = function(articlesByAuthor) {
       ctx.articles = articlesByAuthor;
       next();
     };
 
+    console.log(ctx);
     Article.findWhere('author', ctx.params.authorName.replace('+', ' '), authorData);
   };
 
