@@ -33,6 +33,8 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
+  //loadByCategory calls Article.findWhere and passes it the 'category' field, ctx.params.categoryName which represents the category of the article, and then sets the ctx.articles property to all the articles within that category.
+  //articlesloadByCategory is kicked off when we use the category filter. the route is setup to call articlesloadByCategory once it gets a URL that matches the '/category/:categoryName' format  and then next() represents articlesController.index which calls articleView.index to render.
   articlesController.loadByCategory = function(ctx, next) {
     var categoryData = function(articlesInCategory) {
       ctx.articles = articlesInCategory;
