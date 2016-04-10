@@ -37,7 +37,12 @@
     Article.findWhere('category', ctx.params.categoryName, categoryData);
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // TODO COMMENT: What does this method do?  What is it's execution path?
+  // This method has two parameters ctx and next.
+    // if the are already articles in Aticle.all, then they will be set as variables on the ctx object, calls next which goes to the articleContcoller.index which passes  cxt.articles to articleView.index, which renders the page.
+    // else, it will fetchAll - make the JSON request for the articles by calling articleData (which does the same thing as the if branch).
+
+
   articlesController.loadAll = function(ctx, next) {
     var articleData = function(allArticles) {
       ctx.articles = Article.all;
