@@ -13,6 +13,10 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
+
+  // articleView.populateFilters creates a variable named options and also a variable named template which hold the handlebars template.
+  // options is being set to an array of html representing authors, appends the array to the filter which has been mapped from allAuthors.  This populates the author filter.
+  //
   articleView.populateFilters = function() {
     var options,
       template = Handlebars.compile($('#option-template').text());
@@ -38,9 +42,16 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
+
+  // articleView.handleFilters has an event listener that runs only once, when one of the two filters is changed or selected it will set the resource variable to equal the prefix
+  // author- or category- which selects the author-filter or category-filter respectively.
+  // The page.js sets the path to the /resource/ exact value that was chosen by the user.
+  // all white space is replaced with a + in this path.
+
   articleView.handleFilters = function() {
     $('#filters').one('change', 'select', function() {
       resource = this.id.replace('-filter', '');
+      //console.log(resource);
       page('/' + resource + '/' + $(this).val().replace(/\W+/g, '+')); // Replace any/all whitespace with a +
     });
   };
@@ -118,7 +129,7 @@
   };
 
   // DONE COMMENT: What does this method do?  What is it's execution path?
-  // METHOD DOES:
+  
   // this method will show the articles section and hide all the other main sections
   // it removes whatever articles are present
   // and then goes through the articles array (that has been passed in by the context object) and it
