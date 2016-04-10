@@ -12,7 +12,8 @@
     return template(article);
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // TODO COMMENT: What does this method do?  What is it's execution path?
+  // this
   articleView.populateFilters = function() {
     var options,
       template = Handlebars.compile($('#option-template').text());
@@ -37,7 +38,7 @@
     });
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // TODO COMMENT: What does this method do?  What is it's execution path?
   articleView.handleFilters = function() {
     $('#filters').one('change', 'select', function() {
       resource = this.id.replace('-filter', '');
@@ -117,7 +118,15 @@
     $('#article-json').val(JSON.stringify(article) + ',');
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // TODO COMMENT: What does this method do?  What is it's execution path?
+  // METHOD DOES:
+  // this method will show the articles section and hide all the other main sections
+  // it removes whatever articles are present
+  // and then goes through the articles array (that has been passed in by the context object) and it
+  // creates the html using the template (render),
+  // EXECUTION PATH: this function is called by:
+  // articlesController.index which is called by the default route in routes.js
+  // and in turn it calls articleView.populateFilters and articleView.handleFilters
   articleView.index = function(articles) {
     $('#articles').show().siblings().hide();
 
@@ -127,7 +136,7 @@
     });
 
     articleView.populateFilters();
-    // COMMENT: What does this method do?  What is it's execution path?
+    // TODO COMMENT: What does this method do?  What is it's execution path?
     articleView.handleFilters();
 
     // DONE: Replace setTeasers with just the truncation logic, if needed:
