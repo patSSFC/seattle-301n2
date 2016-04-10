@@ -8,6 +8,8 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
+  //loadById calls Article.findWhere and passes it the 'id' field, ctx.params.id which represents the id of the article, and then sets the ctx.articles property to the instance of the article we're working with.
+  //articlesloadById is kicked off when we click on a "read me" link, as set in routes.js. next() represents articlesController.index which calls articleView.index to render.
   articlesController.loadById = function(ctx, next) {
     var articleData = function(article) {
       ctx.articles = article;
@@ -37,7 +39,7 @@
     Article.findWhere('category', ctx.params.categoryName, categoryData);
   };
 
-  // TODO COMMENT: What does this method do?  What is it's execution path?
+  // DONE COMMENT: What does this method do?  What is it's execution path?
   // This method has two parameters ctx and next.
     // if the are already articles in Aticle.all, then they will be set as variables on the ctx object, calls next which goes to the articleContcoller.index which passes  cxt.articles to articleView.index, which renders the page.
     // else, it will fetchAll - make the JSON request for the articles by calling articleData (which does the same thing as the if branch).

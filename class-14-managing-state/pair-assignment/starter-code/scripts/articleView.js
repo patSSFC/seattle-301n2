@@ -117,7 +117,7 @@
     $('#article-json').val(JSON.stringify(article) + ',');
   };
 
-  // TODO COMMENT: What does this method do?  What is it's execution path?
+  // DONE COMMENT: What does this method do?  What is it's execution path?
   // METHOD DOES:
   // this method will show the articles section and hide all the other main sections
   // it removes whatever articles are present
