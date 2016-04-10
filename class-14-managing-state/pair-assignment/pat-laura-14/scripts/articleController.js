@@ -7,7 +7,7 @@
     articleView.index(ctx.articles);
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // TODO COMMENT: What does this method do?  What is it's execution path?
   articlesController.loadById = function(ctx, next) {
     var articleData = function(article) {
       ctx.articles = article;
@@ -17,7 +17,7 @@
     Article.findWhere('id', ctx.params.id, articleData);
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // TODO COMMENT: What does this method do?  What is it's execution path?
   articlesController.loadByAuthor = function(ctx, next) {
     var authorData = function(articlesByAuthor) {
       ctx.articles = articlesByAuthor;
@@ -27,7 +27,7 @@
     Article.findWhere('author', ctx.params.authorName.replace('+', ' '), authorData);
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // TODO COMMENT: What does this method do?  What is it's execution path?
   articlesController.loadByCategory = function(ctx, next) {
     var categoryData = function(articlesInCategory) {
       ctx.articles = articlesInCategory;
@@ -37,10 +37,16 @@
     Article.findWhere('category', ctx.params.categoryName, categoryData);
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // TODO COMMENT: What does this method do?  What is it's execution path?
+  // THIS METHOD DOES:
+    //
+
+  // EXECUTION PATH IS:
+    // called by:
+    // passes context on to
   articlesController.loadAll = function(ctx, next) {
     var articleData = function(allArticles) {
-      ctx.articles = Article.all;
+      ctx.articles = Article.all; // constructor
       next();
     };
 
